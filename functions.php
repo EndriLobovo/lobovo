@@ -1,5 +1,5 @@
-add_action('wp_ajax_nopriv__lobo_keywords_tools','keywords_tools');
-function keywords_tools(){
+add_action('wp_ajax_nopriv_keywordajax_submission','keyword_ajax_handler');
+function keyword_ajax_handler(){
 
 $user_text = $_POST['message'];
 $words = str_word_count(strtolower($user_text),1);
