@@ -1,15 +1,15 @@
-jQuery('form .custom-button-class').on('click', function(e) {
-	e.preventDefault();
+jQuery('form .message').on('keypress', function(e) {
 	var message = jQuery(".message").val();
-	  	$.ajax({
-	      	type: 'POST',
+        $.ajax({
+        	type: 'POST',
 			url: admin_ajax,
-	        data: {
-				action: 'lobo_keywords_tools',
+        data: {
+				action: 'keywordajax_submission',
 				'message': message,
 			}, 
-	      	success: function(data){
-	          	jQuery('.form-message').html(data);
-	         }
-	        });
+          success: function(data){
+          		jQuery('.form-message').html(data);
+            
+          }
+        });
 });
