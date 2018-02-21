@@ -1,15 +1,15 @@
-jQuery('form .message').on('keypress', function(e) {
+jQuery('form .message').on('keyup', function() {
 	var message = jQuery(".message").val();
         $.ajax({
         	type: 'POST',
-			url: admin_ajax,
-        data: {
-				action: 'keywordajax_submission',
+        	url: admin_ajax,
+        	data: {
+				action: 'keyword_ajax_density',
 				'message': message,
 			}, 
           success: function(data){
-          		jQuery('.form-message').html(data);
-            
+          		jQuery('.keywords-density').html(data);
           }
         });
+
 });
