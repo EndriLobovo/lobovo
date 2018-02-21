@@ -1,18 +1,28 @@
-<div class="container">
+<?php
+/* Template Name: Lobovo Tool */
+
+$allow_comments = oxy_get_option( 'site_comments' );
+
+get_header();
+
+global $post;
+
+oxy_page_header( $post->ID, array( 'heading_type' => 'page' ) ); ?>
+
+
+<div class="container" style="margin-top: 50px;">
   <div class="col-md-8">
-      <form id="form" action="/wp-admin/admin-ajax.php" method="post">
+      <form id="form" action="" method="post">
         <span class="col-md-12 keywords-textarea">
           <textarea placeholder="Please enter your text here"  class ="message" type="text" name="message" ></textarea>
         </span>
         <br>
-        <span class="col-md-12">
-          <button type="submit" class="submit custom-button-class right" value="submit">Submit Text</button>
-        </span>
-        <input type="hidden" name="action" value="wp_ajax_panacea_ajax_submission"/>
       </form>
   </div>
   <div class="col-md-4">
-    <div class=" form-message">
+    <div class="keywords-density">
+      
     </div>
+
   </div>
 </div>
